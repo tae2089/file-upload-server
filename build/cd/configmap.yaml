@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: devops-test-server-configmap
+  namespace: devops
+  labels:
+    app: devops-test-server-configmap
+data:
+  BUCKET: testing

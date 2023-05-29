@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-test-server
+  namespace: devops
+  labels:
+    app: devops-test-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: devops-test-server
+  template:
+    metadata:
+      labels:
+        app: devops-test-server
+    spec:
+      containers:
+        - name: devops-test-server
+          image: <DOCKER IMAGE>
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - secretRef:
+                name: devops-test-server-secret
