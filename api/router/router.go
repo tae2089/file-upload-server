@@ -11,8 +11,9 @@ func Setup(r *gin.Engine) {
 		config.LoadEnv()
 	}
 	fileRouter := r.Group("")
-	registFileRouter(fileRouter)
 	fileRouter.Use(middleware.JwtAuthMiddleware())
+	registFileRouter(fileRouter)
+
 	healthRouter := r.Group("")
 	registHealthRouter(healthRouter)
 }
