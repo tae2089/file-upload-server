@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: devops-test-server-configmap
+  name: file-upload-configmap
   namespace: devops
   labels:
-    app: devops-test-server-configmap
+    app: file-upload-configmap
 data:
   BUCKET: testing
